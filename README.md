@@ -29,7 +29,7 @@ $ python knn.py --dataset ../datasets/animals
 
 On a set of 3000 images of cats vs. dogs vs. pandas: 
 
-![knn](knn.png)
+![knn](imgs/knn.png)
 
 One main advantage of the k-NN algorithm is that **it’s extremely simple to implement and understand**. Furthermore, the classifier takes absolutely no time to train, since all we need to do is store our data points for the purpose of later computing distances to them and obtaining our final classification.
 
