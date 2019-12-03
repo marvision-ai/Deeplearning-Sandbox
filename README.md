@@ -1,5 +1,5 @@
 # Deep Learning Sandbox
-A deep learning utilities library for my experiments and development. Free to use by all. 
+A deep learning utilities library for my experiments and development in Tensorflow 2.0. Free to use by all. 
 
 
 # Table of contents

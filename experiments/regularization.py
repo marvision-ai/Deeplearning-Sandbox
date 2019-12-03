@@ -5,8 +5,8 @@
 from sklearn.linear_model import SGDClassifier
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
-from pyimagesearch.preprocessing import SimplePreprocessor
-from pyimagesearch.datasets import SimpleDatasetLoader
+from deepvision.preprocessing import SimplePreprocessor
+from deepvision.datasets import SimpleDatasetLoader
 from imutils import paths
 import argparse
 
