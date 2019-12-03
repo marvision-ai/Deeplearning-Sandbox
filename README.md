@@ -5,9 +5,10 @@ A deep learning utilities library for my experiments and development in Tensorfl
 # Table of contents
 1. [Utility functions](#utility_functions)
 2. [Experiments](#experiments)
-    1. [k-NN: A Simple Classifier](#knn)
-    2. [Parameterized Learning (Linear Regression)](#linear_regression)
-    3. [Gradient Descent, SGD, Mini-batch SGD, Regularization](#gradient)
+   1. Computer Vision fundamentals
+       - [k-NN: A Simple Classifier](#knn)
+       - [Parameterized Learning (Linear Regression)](#linear_regression)
+       - [Gradient Descent, SGD, Mini-batch SGD, Regularization](#gradient)
 
 
 
@@ -18,6 +19,10 @@ A deep learning utilities library for my experiments and development in Tensorfl
 
 ```
  simpleDatasetloader.py
+```
+2. **Preliminary Data pre-processor:**
+   - an image preprocessor that resizes the image, ignoring the aspect ratio. (For now)
+```
  simplePreprocessor.py
 ```
 
