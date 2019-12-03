@@ -9,6 +9,7 @@ A deep learning utilities library for my experiments and development in Tensorfl
        - [k-NN: A Simple Classifier](#knn)
        - [Parameterized Learning (Linear Regression)](#linear_regression)
        - [Gradient Descent, SGD, Mini-batch SGD, Regularization](#gradient)
+       - [Rules of thumb for Convolutional Neural Networks](#rules)
 
 
 
@@ -50,7 +51,8 @@ $ python regularization.py
 ```
 
 
-### 4. Rules of thumb for Building ConvNets
+### **4. Rules of thumb for Building ConvNets** <a name="rules"></a>
+
 
 - The images presented to the input layer should be square. Using square inputs allows us to take advantage of linear algebra optimization libraries. Common input layer sizes include **32 × 32, 64 × 64, 96 × 96, 224 × 224, 227 × 227 and 229 × 229** (leaving out the number of channels for notational convenience).
 - The input layer should also be divisible by two multiple times after the first **CONV** operation is applied. You can do this by tweaking your filter size and stride. The **“divisible by two rule"** enables the spatial inputs in our network to be conveniently down sampled via **POOL** operation in an efficient manner.
