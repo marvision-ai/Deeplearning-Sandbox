@@ -96,7 +96,8 @@ $ python regularization.py
 - Once you master this **“traditional” method** of building Convolutional Neural Networks, you should then start exploring **leaving max pooling operations out entirely** and using just **CONV** layers to reduce spatial dimensions, eventually leading to **average pooling** rather than an **FC** layer
 
 
-### **5. A Basic Neural Net - ShallowNet ** <a name="basic_nn"></a>
+### **5. A Basic Neural Net - ShallowNet** <a name="basic_nn"></a>
+
 ```
 python shallownet_cifar10.py
 ```
