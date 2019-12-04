@@ -1,5 +1,5 @@
 # Deep Learning Sandbox
-A deep learning utilities library for my experiments and development in Tensorflow 2.0. Free to use by all. 
+A deep learning utilities library for organizing my thoughts, experiments, and development practice in Tensorflow 2.0. Free to use by all. 
 
 
 # Table of contents
@@ -10,6 +10,7 @@ A deep learning utilities library for my experiments and development in Tensorfl
        - [Parameterized Learning (Linear Regression)](#linear_regression)
        - [Gradient Descent, SGD, Mini-batch SGD, Regularization](#gradient)
        - [Rules of thumb for Convolutional Neural Networks](#rules)
+       - [A basic Neural net - Shallow net](#basic_nn)
 
 
 
@@ -21,14 +22,34 @@ A deep learning utilities library for my experiments and development in Tensorfl
 ```
  simpleDatasetloader.py
 ```
+
 2. **Preliminary Data pre-processor:**
    - an image preprocessor that resizes the image, ignoring the aspect ratio. (For now)
 ```
  simplePreprocessor.py
 ```
 
+3. **Image to array pre-processor:**
+   - The Keras library provides the img_to_array function that accepts an input image and then properly orders the channels based on our image_data_format setting. Here we wrap this function inside a new class named ImageToArrayPreprocessor.
 
-## Experiments: <a name="experiments"></a>
+
+
+*Note about preprocessors: There will be different classes of preprocessors that will allow us to create “chains” of preprocessors to efficiently prepare images for training and testing.*
+
+```python
+
+# The image preprocessors are chained together and will be applied in sequential order
+
+# resize all input images to a fixed size of 32 × 32 pixels
+sp = SimplePreprocessor(32, 32)
+# apply the proper channel ordering
+iap = ImageToArrayPreprocessor()
+# load an image dataset from disk and prepare all images in the dataset for training
+sdl = SimpleDatasetLoader(preprocessors=[sp, iap])
+(data, labels) = sdl.load(imagePaths, verbose=500)
+```
+
+## Experiments: Utilize any of these scripts at the top level of the folder to reference the deepvision library <a name="experiments"></a>
 ### **1. **k-NN: A Simple Classifier**** <a name="knn"></a>
 ```
 $ python knn.py --dataset ../datasets/animals
@@ -73,3 +94,13 @@ $ python regularization.py
 
 - **Dropout (DO)** is typically applied in between FC layers with a dropout probability of 50% – you should consider applying dropout in nearly every architecture you build. While not always performed, you can also include dropout layers (with a very small probability, 10-25%) between **POOL** and **CONV** layers. Due to the local connectivity of **CONV** layers, dropout is less effective here, but I’ve often found it helpful when battling overfitting.
 - Once you master this **“traditional” method** of building Convolutional Neural Networks, you should then start exploring **leaving max pooling operations out entirely** and using just **CONV** layers to reduce spatial dimensions, eventually leading to **average pooling** rather than an **FC** layer
+
+
+### **5. A Basic Neural Net - ShallowNet ** <a name="basic_nn "></a>
+```
+python shallownet_cifar10.py
+```
+
+Loss and accuracy for ShallowNet trained on CIFAR-10. Our network obtains 60% classification accuracy; however, it is overfitting. Further accuracy can be obtained by applying regularization
+
+<img src="imgs/shallownet_cifar10.png" width="400" height="300" style="margin-right: 10px;" >
