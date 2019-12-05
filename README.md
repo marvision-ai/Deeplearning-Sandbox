@@ -11,6 +11,7 @@ A deep learning utilities library for organizing my thoughts, experiments, and d
        - [Gradient Descent, SGD, Mini-batch SGD, Regularization](#gradient)
        - [Rules of thumb for Convolutional Neural Networks](#rules)
        - [A basic Neural net - Shallow net](#basic_nn)
+       - [Loading and Saving models](#load_save)
 
 
 
@@ -105,3 +106,25 @@ python shallownet_cifar10.py
 Loss and accuracy for ShallowNet trained on CIFAR-10. Our network obtains 60% classification accuracy; however, it is overfitting. Further accuracy can be obtained by applying regularization
 
 <img src="imgs/shallownet_cifar10.png" width="400" height="300" style="margin-right: 10px;" >
+
+
+### **6. Loading and Saving Models** <a name="load_save"></a>
+Using the Keras library, model serialization is as simple as calling `model.save` on a trained model and then loading it via the `load_model` function.
+```python
+# save the network to disk
+print("[INFO] serializing network...")
+model.save(args["model"])
+
+# load the pre-trained network
+print("[INFO] loading pre-trained network...")
+model = load_model(args["model"])
+
+# make predictions on the images
+print("[INFO] predicting...")
+preds = model.predict(data, batch_size=32).argmax(axis=1)
+
+# Keep in mind that the .predict method of model will return a list of probabilities for every
+# image in data – one probability for each class label, respectively. Taking the argmax on axis=1
+# finds the index of the class label with the largest probability for each image.
+
+```
