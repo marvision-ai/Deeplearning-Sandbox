@@ -15,19 +15,19 @@ A deep learning utilities library for organizing my thoughts, experiments, and d
 
 
 
-## Utility functions <a name="utility_functions"></a>
+# Utility functions <a name="utility_functions"></a>
 1. **Preliminary Dataset loader:** 
    - This dataset loader is simple by design; however, it affords us the ability to apply any number of image preprocessors to every image in our dataset with ease. The only caveat of this dataset loader is that it assumes that all images in the dataset can fit into main memory at once. (To be expanded upon soon)
 
 
 ```
- simpleDatasetloader.py
+ simpledatasetloader.py
 ```
 
 2. **Preliminary Data pre-processor:**
    - an image preprocessor that resizes the image, ignoring the aspect ratio. (For now)
 ```
- simplePreprocessor.py
+ simplepreprocessor.py
 ```
 
 3. **Image to array pre-processor:**
@@ -52,21 +52,21 @@ sdl = SimpleDatasetLoader(preprocessors=[sp, iap])
 (data, labels) = sdl.load(imagePaths, verbose=500)
 ```
 
-## Experiments: Utilize any of these scripts at the top level of the folder to reference the deepvision library <a name="experiments"></a>
-### **1. **k-NN: A Simple Classifier**** <a name="knn"></a>
+# Experiments: Utilize any of these scripts at the top level of the folder to reference the deepvision library <a name="experiments"></a>
+## **1. **k-NN: A Simple Classifier**** <a name="knn"></a>
 ```
 $ python knn.py --dataset ../datasets/animals
 ```
 
 - [ ] Future Enhancement: Utilizing Nvidia Rapids cuML
 
-### **2. Parameterized Learning** <a name="linear_regression"></a>
+## **2. Parameterized Learning** <a name="linear_regression"></a>
 
 ```
 $ python linear_classifier.py
 ```
 
-### **3. Gradient Descent, SGD, Mini-batch SGD, Regularization** <a name="gradient"></a>
+## **3. Gradient Descent, SGD, Mini-batch SGD, Regularization** <a name="gradient"></a>
 
 ``` 
 $ python gradient_descent.py
@@ -75,7 +75,7 @@ $ python regularization.py
 ```
 
 
-### **4. Rules of thumb for Building ConvNets** <a name="rules"></a>
+## **4. Rules of thumb for Building ConvNets** <a name="rules"></a>
 
 
 - The images presented to the input layer should be square. Using square inputs allows us to take advantage of linear algebra optimization libraries. Common input layer sizes include **32 × 32, 64 × 64, 96 × 96, 224 × 224, 227 × 227 and 229 × 229** (leaving out the number of channels for notational convenience).
@@ -99,7 +99,7 @@ $ python regularization.py
 - Once you master this **“traditional” method** of building Convolutional Neural Networks, you should then start exploring **leaving max pooling operations out entirely** and using just **CONV** layers to reduce spatial dimensions, eventually leading to **average pooling** rather than an **FC** layer
 
 
-### **5. A Basic Neural Net - ShallowNet** <a name="basic_nn"></a>
+## **5. A Basic Neural Net - ShallowNet** <a name="basic_nn"></a>
 
 ```
 python shallownet_cifar10.py
@@ -110,7 +110,7 @@ Loss and accuracy for ShallowNet trained on CIFAR-10. Our network obtains 60% cl
 <img src="imgs/shallownet_cifar10.png" width="400" height="300" style="margin-right: 10px;" >
 
 
-### **6. Loading and Saving Models** <a name="load_save"></a>
+## **6. Loading and Saving Models** <a name="load_save"></a>
 Using the Keras library, model serialization is as simple as calling `model.save` on a trained model and then loading it via the `load_model` function.
 ```python
 # save the network to disk
