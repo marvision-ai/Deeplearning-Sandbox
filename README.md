@@ -32,7 +32,9 @@ A deep learning utilities library for organizing my thoughts, experiments, and d
 
 3. **Image to array pre-processor:**
    - The Keras library provides the img_to_array function that accepts an input image and then properly orders the channels based on our image_data_format setting. Here we wrap this function inside a new class named ImageToArrayPreprocessor.
-
+```
+imagetoarraypreprocessor.py
+```
 
 
 *Note about preprocessors: There will be different classes of preprocessors that will allow us to create “chains” of preprocessors to efficiently prepare images for training and testing.*
@@ -128,3 +130,8 @@ preds = model.predict(data, batch_size=32).argmax(axis=1)
 # finds the index of the class label with the largest probability for each image.
 
 ```
+
+
+
+
+Further Credit: Adrian Rosebrock 
