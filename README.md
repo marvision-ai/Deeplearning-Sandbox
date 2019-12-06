@@ -1,6 +1,6 @@
 # Deep Learning Sandbox
 A deep learning utilities library for organizing my thoughts, experiments, and development practice in Tensorflow 2.0. Free to use by all. 
-
+Further Credit: Adrian Rosebrock 
 
 # Table of contents
 1. [Utility functions](#utility_functions)
@@ -12,6 +12,7 @@ A deep learning utilities library for organizing my thoughts, experiments, and d
        - [Rules of thumb for Convolutional Neural Networks](#rules)
        - [A basic Neural net - Shallow net](#basic_nn)
        - [Loading and Saving models](#load_save)
+       - [LeNet Architecture](#le_net)
 
 
 
@@ -131,7 +132,17 @@ preds = model.predict(data, batch_size=32).argmax(axis=1)
 
 ```
 
+## **7. LeNet Architecture** <a name="le_net"></a>
+
+
+The LeNet architecture consists of two series of **CONV => TANH => POOL** layer sets followed by a **fully-connected layer and softmax output**.
+
+<img src="imgs/lenet_arch.png" style="margin-right: 10px;" >
+
+```
+python lenet_mnist.py
+```
 
 
 
-Further Credit: Adrian Rosebrock 
+
